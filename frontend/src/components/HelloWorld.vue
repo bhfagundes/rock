@@ -1,21 +1,44 @@
 <template>
-  <div class="hello">
-    <h3>{{ msg }}</h3>
-    <p class="mb-2">The application is configured and ready to import our components. You will find MDB Vue docs <a href="https://mdbootstrap.com/vue/" target="_blank">here</a>.</p>
-    <p>Please type <span class="black-text">npm run demo</span> or <span class="black-text">yarn demo</span> to launch our Demonstration Page. The files with the code are placed in the <span class="black-text">demo</span> directory.</p>
-    <p>If You want to completely remove our demo from Your App, easily type <span class="black-text">npm run remove-demo</span> or <span class="black-text">yarn remove-demo</span>.</p>
-  </div>
-</template>
 
+  <mdb-container fluid class="mt-3">
+            <mdb-row>
+                <mdb-col md="4"></mdb-col>
+                <mdb-col md="6"> <h3>{{ msg }}</h3></mdb-col>
+                <mdb-col md="2">
+                    <mdb-dropdown tag="li">
+                        <mdb-dropdown-toggle slot="toggle" tag="a" navLink  waves-fixed>Olá,</mdb-dropdown-toggle>
+                        <mdb-dropdown-menu>
+                        <mdb-dropdown-item>Action</mdb-dropdown-item>
+                        <mdb-dropdown-item>Another action</mdb-dropdown-item>
+                        <mdb-dropdown-item>Something else here</mdb-dropdown-item>
+                        </mdb-dropdown-menu>
+                    </mdb-dropdown>
+                </mdb-col>
+            </mdb-row>
+  </mdb-container>
+</template>
 <script>
+import {mdbContainer, mdbRow, mdbCol,mdbDropdown, mdbDropdownItem, mdbDropdownMenu, mdbDropdownToggle } from 'mdbvue';
+
 export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Wsdasdasdsp'
-    };
-  }
-}
+  name: 'App',
+  components: {
+    mdbContainer,
+    mdbRow,
+    mdbCol,
+    mdbDropdown,
+    mdbDropdownItem,
+    mdbDropdownMenu,
+    mdbDropdownToggle
+  },
+  data()
+  {
+        
+            return {
+                msg: 'Setupsda',
+        }
+    }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

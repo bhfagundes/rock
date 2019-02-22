@@ -1,28 +1,34 @@
 <template>
-    <div>
-        <mdb-container fluid class="mt-5">
+    <div id="app">
+        <mdb-container fluid class="mt-3">
             <mdb-row>
-            <mdb-col sm="2" offset-md="2"> <sidebar-menu :menu="menu" /></mdb-col>
-            <mdb-col sm="4"> <router-view/></mdb-col>
+                <mdb-col sm="2" md="3"> <sidebar-menu :menu="menu" /></mdb-col>
+                <mdb-col sm="2" md="9"> <router-view/></mdb-col>
             </mdb-row>
+            
         </mdb-container>
     </div>
 </template>
 
 <script>
-import {mdbContainer, mdbRow, mdbCol } from 'mdbvue';
+import {mdbContainer, mdbRow, mdbCol,mdbDropdown, mdbDropdownItem, mdbDropdownMenu, mdbDropdownToggle } from 'mdbvue';
 
 export default {
   name: 'App',
-
   components: {
     mdbContainer,
     mdbRow,
-    mdbCol
+    mdbCol,
+    mdbDropdown,
+    mdbDropdownItem,
+    mdbDropdownMenu,
+    mdbDropdownToggle
   },
   data()
   {
+        
             return {
+                msg: 'Index',
                 menu: [
                     {
                         header: false,
@@ -43,7 +49,7 @@ export default {
                         */
                     },
                     {
-                        href: '/teste',
+                        href: '/home',
                         title: 'Content',
                         icon: 'fa fa-file',
                         
@@ -56,7 +62,7 @@ export default {
                         */
                     },
                     {
-                        href: '/teste',
+                        href: '/setup',
                         title: 'Setup',
                         icon: 'fa fa-cog',
                         /*
@@ -75,5 +81,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+h3 {
+  font-weight: normal;
+}
+p {
+  color: #969696;
+  margin-bottom: 0;
+  font-size: 14px;
+}
 </style>
