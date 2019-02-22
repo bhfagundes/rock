@@ -7,6 +7,9 @@ import App from './App';
 import router from './router';
 import VueSidebarMenu from 'vue-sidebar-menu';
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css';
+import VueTabs from 'vue-nav-tabs';
+import 'vue-nav-tabs/themes/vue-tabs.css';
+Vue.use(VueTabs);
 Vue.use(VueSidebarMenu);
 Vue.config.productionTip = false;
 

@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <mdb-container fluid class="mt-3">
+        <mdb-container fluid class="mt-1">
             <mdb-row>
                 <mdb-col sm="2" md="3"> <sidebar-menu :menu="menu" /></mdb-col>
                 <mdb-col sm="2" md="9"> <router-view/></mdb-col>
