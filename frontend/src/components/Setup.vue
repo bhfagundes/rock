@@ -54,12 +54,11 @@
                                                   <mdb-modal-title>Novo Membro</mdb-modal-title>
                                                 </mdb-modal-header>
                                                 <mdb-modal-body>
-                                                  <mdb-input type="text" placeholder="Insira aqui o nome do usuário a ser cadastrado"label="Nome"/>
+                                                  <mdb-input type="text" label="Nome"/>
                                                   <mdb-input type="email" label="E-mail" />
                                                   <div class="float-right">
-                                                    <mdb-btn color="primary" size="sm">Criar membro da equipe</mdb-btn>
+                                                    <mdb-btn color="indigo" size="sm">Criar membro da equipe</mdb-btn>
                                                   </div>
-
                                                 </mdb-modal-body>
                                                 <mdb-modal-footer>
                                                 </mdb-modal-footer>
