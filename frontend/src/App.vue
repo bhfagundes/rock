@@ -1,11 +1,11 @@
 <template>
     <div id="app">
         <mdb-container fluid class="mt-1">
-            <mdb-row>
-                <mdb-col sm="2" md="3"> <sidebar-menu :menu="menu" /></mdb-col>
-                <mdb-col sm="2" md="9"> <router-view/></mdb-col>
+            <mdb-row style="width:100%">
+                <mdb-col sm="2" md="1" > <sidebar-menu :menu="menu" style="width:10%;"/></mdb-col>
+                <mdb-col sm="2" md="11"> <router-view style="width:100%"/></mdb-col>
             </mdb-row>
-            
+
         </mdb-container>
     </div>
 </template>
@@ -26,7 +26,7 @@ export default {
   },
   data()
   {
-        
+
             return {
                 msg: 'Index',
                 menu: [
@@ -52,7 +52,7 @@ export default {
                         href: '/home',
                         title: 'Content',
                         icon: 'fa fa-file',
-                        
+
                         /*
                         disabled: true
                         badge: {
