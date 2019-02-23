@@ -47,18 +47,23 @@
                                               <mdb-btn-group>
                                                 <mdb-btn color="success" size="sm" @click.native="showModal7 = true">Novo Usuário</mdb-btn>
                                               </mdb-btn-group>
-                                               <mdb-modal fullHeight position="right" direction="right" v-if="showModal7" @close="showModal7 = false">
-                                                <mdb-modal-header>
-                                                  <mdb-modal-title>Modal title</mdb-modal-title>
-                                                </mdb-modal-header>
-                                                <mdb-modal-body>...</mdb-modal-body>
-                                                <mdb-modal-footer>
-                                                  <mdb-btn color="secondary" @click.native="showModal7 = false">Close</mdb-btn>
-                                                  <mdb-btn color="primary">Save changes</mdb-btn>
-                                                </mdb-modal-footer>
-                                              </mdb-modal>
                                             </mdb-form-inline>
                                           </mdb-col>
+                                          <mdb-modal fullHeight position="right" direction="right" v-if="showModal7" @close="showModal7 = false">
+                                                <mdb-modal-header>
+                                                  <mdb-modal-title>Novo Membro</mdb-modal-title>
+                                                </mdb-modal-header>
+                                                <mdb-modal-body>
+                                                  <mdb-input type="text" placeholder="Insira aqui o nome do usuário a ser cadastrado"label="Nome"/>
+                                                  <mdb-input type="email" label="E-mail" />
+                                                  <div class="float-right">
+                                                    <mdb-btn color="primary" size="sm">Criar membro da equipe</mdb-btn>
+                                                  </div>
+
+                                                </mdb-modal-body>
+                                                <mdb-modal-footer>
+                                                </mdb-modal-footer>
+                                              </mdb-modal>
                                        </mdb-row>
                                         <mdb-row class="my-4">
                                           <mdb-col sm="3">
