@@ -74,6 +74,7 @@
                           id="nome"
                           label="Nome"
                           v-model="usuario.nome"
+                          required
                         />
                         <mdb-input
                           type="email"
@@ -81,6 +82,7 @@
                           id="email"
                           label="E-mail"
                           v-model="usuario.email"
+                          required
                         />
                         <div class="float-right">
                           <mdb-btn color="indigo" size="sm">Criar membro da equipe</mdb-btn>
@@ -90,6 +92,19 @@
                       <mdb-modal-footer></mdb-modal-footer>
                     </mdb-modal>
                   </mdb-row>
+                   <mdb-modal v-if="show"  @close="show = false" success>
+                    <mdb-modal-header>
+                      <mdb-modal-title>Sucesso!</mdb-modal-title>
+                      </mdb-modal-header>
+                      <mdb-modal-body  class="text-center">
+                        <mdb-icon icon="check" size="4x" class="mb-3 animated rotateIn"/>
+                        <p>
+                          Usuário adicionado com sucesso!
+                        </p>
+                      </mdb-modal-body>
+
+                    </mdb-modal>
+
                   <mdb-row class="my-4">
                     <mdb-col sm="3" v-for="usuario of usuarios" :key="usuario.id">
                       <mdb-card>
@@ -164,16 +179,21 @@ import { VueTabs, VTab } from "vue-nav-tabs";
 import Usuarios from "../services/usuarios";
 export default {
   mounted() {
-    Usuarios.listar().then(resposta => {
-      console.log(resposta.data);
-      this.usuarios = resposta.data;
-    });
+    this.listar();
   },
   methods: {
     salvar(){
       Usuarios.salvar(this.usuario).then(resposta => {
-        alert('Salvo com sucesso!');
+        this.listar();
+        this.usuario={};
+        this.showModal7 = false;
+        this.show=true;
       });
+    },
+    listar (){
+      Usuarios.listar().then(resposta => {
+      this.usuarios = resposta.data;
+    });
     }
   },
   name: "App",
@@ -222,6 +242,7 @@ export default {
       active: 0,
       active2: 0,
       showModal7: false,
+      show: false,
       selected: "radio1",
       options: [
         { text: "Radio 1", value: "radio1" },
