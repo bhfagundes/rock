@@ -11,6 +11,7 @@ import VueTabs from 'vue-nav-tabs';
 import 'vue-nav-tabs/themes/vue-tabs.css';
 Vue.use(VueTabs);
 Vue.use(VueSidebarMenu);
+
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
