@@ -65,83 +65,17 @@
                                               </mdb-modal>
                                        </mdb-row>
                                         <mdb-row class="my-4">
-                                          <mdb-col sm="3">
+                                          <mdb-col sm="3"  v-for="usuario of usuarios" :key="usuario.id">
                                             <mdb-card>
                                               <mdb-card-body>
                                                  <center> <img class="card-img-100 rounded-circle d-flex z-depth-1 mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" alt="Generic placeholder image"></center>
-                                                <mdb-card-text><b><center>Brenner Henrique Fagundes</center></b></mdb-card-text>
-                                                <mdb-card-text><center>bhfagundes@gmail.com</center></mdb-card-text>
+                                                <mdb-card-text><b><center>{{usuario.nome}}</center></b></mdb-card-text>
+                                                <mdb-card-text><center>{{usuario.email}}</center></mdb-card-text>
                                               </mdb-card-body>
                                             </mdb-card>
+                                            <br>
                                           </mdb-col>
-                                          <mdb-col sm="3">
-                                            <mdb-card>
-                                              <mdb-card-body>
-                                                 <center> <img class="card-img-100 rounded-circle d-flex z-depth-1 mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" alt="Generic placeholder image"></center>
-                                                <mdb-card-text><b><center>Brenner Henrique Fagundes</center></b></mdb-card-text>
-                                                <mdb-card-text><center>bhfagundes@gmail.com</center></mdb-card-text>
-                                              </mdb-card-body>
-                                            </mdb-card>
-                                          </mdb-col>
-                                          <mdb-col sm="3">
-                                            <mdb-card>
-                                              <mdb-card-body>
-                                                 <center> <img class="card-img-100 rounded-circle d-flex z-depth-1 mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" alt="Generic placeholder image"></center>
-                                                <mdb-card-text><b><center>Brenner Henrique Fagundes</center></b></mdb-card-text>
-                                                <mdb-card-text><center>bhfagundes@gmail.com</center></mdb-card-text>
-                                              </mdb-card-body>
-                                            </mdb-card>
-                                          </mdb-col>
-                                          <mdb-col sm="3">
-                                            <mdb-card>
-                                              <mdb-card-body>
-                                                 <center> <img class="card-img-100 rounded-circle d-flex z-depth-1 mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" alt="Generic placeholder image"></center>
-                                                <mdb-card-text><b><center>Brenner Henrique Fagundes</center></b></mdb-card-text>
-                                                <mdb-card-text><center>bhfagundes@gmail.com</center></mdb-card-text>
-                                              </mdb-card-body>
-                                            </mdb-card>
-                                          </mdb-col>
-                                        </mdb-row>
-                                          <mdb-row class="my-4">
-                                          <mdb-col sm="3">
-                                            <mdb-card>
-                                              <mdb-card-body>
-                                                 <center> <img class="card-img-100 rounded-circle d-flex z-depth-1 mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" alt="Generic placeholder image"></center>
-                                                <mdb-card-text><b><center>Brenner Henrique Fagundes</center></b></mdb-card-text>
-                                                <mdb-card-text><center>bhfagundes@gmail.com</center></mdb-card-text>
-                                              </mdb-card-body>
-                                            </mdb-card>
-                                          </mdb-col>
-                                          <mdb-col sm="3">
-                                            <mdb-card>
-                                              <mdb-card-body>
-                                                 <center> <img class="card-img-100 rounded-circle d-flex z-depth-1 mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" alt="Generic placeholder image"></center>
-                                                <mdb-card-text><b><center>Brenner Henrique Fagundes</center></b></mdb-card-text>
-                                                <mdb-card-text><center>bhfagundes@gmail.com</center></mdb-card-text>
-                                              </mdb-card-body>
-                                            </mdb-card>
-                                          </mdb-col>
-                                          <mdb-col sm="3">
-                                            <mdb-card>
-                                              <mdb-card-body>
-                                                 <center> <img class="card-img-100 rounded-circle d-flex z-depth-1 mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" alt="Generic placeholder image"></center>
-                                                <mdb-card-text><b><center>Brenner Henrique Fagundes</center></b></mdb-card-text>
-                                                <mdb-card-text><center>bhfagundes@gmail.com</center></mdb-card-text>
-                                              </mdb-card-body>
-                                            </mdb-card>
-                                          </mdb-col>
-                                          <mdb-col sm="3">
-                                            <mdb-card>
-                                              <mdb-card-body>
-                                                 <center> <img class="card-img-100 rounded-circle d-flex z-depth-1 mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" alt="Generic placeholder image"></center>
-                                                <mdb-card-text><b><center>Brenner Henrique Fagundes</center></b></mdb-card-text>
-                                                <mdb-card-text><center>bhfagundes@gmail.com</center></mdb-card-text>
-                                              </mdb-card-body>
-                                            </mdb-card>
-                                          </mdb-col>
-                                        </mdb-row>
-
-
+                                          </mdb-row>
                                     </mdb-container>
                                 </v-tab>
 
@@ -163,7 +97,14 @@
 <script>
 import {mdbContainer,mdbBtn, mdbModal, mdbModalHeader, mdbModalTitle, mdbModalBody, mdbModalFooter,mdbBtnGroup, mdbMedia,mdbMediaBody,mdbRow, mdbCard, mdbInput,mdbCardTitle, mdbFormInline,mdbCardText, mdbCardFooter, mdbCardBody, mdbCardHeader,mdbTab, mdbTabItem, mdbTabContent, mdbTabPane,mdbCol,mdbDropdown, mdbDropdownItem, mdbDropdownMenu, mdbDropdownToggle,mdbIcon, mdbTabs } from 'mdbvue';
 import {VueTabs, VTab} from 'vue-nav-tabs';
+import Usuarios from '../services/usuarios';
 export default {
+  mounted(){
+      Usuarios.listar().then(resposta => {
+        console.log(resposta.data);
+        this.usuarios = resposta.data;
+      })
+  },
   name: 'App',
   components: {
     mdbContainer,
@@ -203,6 +144,7 @@ export default {
     {
         return {
             msg: 'Setup',
+            usuarios: [],
             active: 0,
             active2: 0,
             showModal7: false,

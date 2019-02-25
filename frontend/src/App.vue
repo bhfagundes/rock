@@ -13,13 +13,7 @@
 <script>
 console.log("teste");
 import {mdbContainer, mdbRow, mdbCol,mdbDropdown, mdbDropdownItem, mdbDropdownMenu, mdbDropdownToggle } from 'mdbvue';
-import Usuarios from './services/usuarios';
 export default {
-  mounted(){
-      Usuarios.listar().then(resposta => {
-        console.log(resposta);
-      })
-  },
   name: 'App',
   components: {
     mdbContainer,
