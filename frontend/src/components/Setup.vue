@@ -51,7 +51,8 @@
                           <mdb-btn
                             color="success"
                             size="sm"
-                            @click.native="showModal7 = true"
+                             @click="abrirModal()"
+
                           >Novo Usuário</mdb-btn>
                         </mdb-btn-group>
                       </mdb-form-inline>
@@ -64,7 +65,7 @@
                       @close="showModal7 = false"
                     >
                       <mdb-modal-header>
-                        <mdb-modal-title>Novo Membro</mdb-modal-title>
+                        <mdb-modal-title>{{titulo_form}}</mdb-modal-title>
                       </mdb-modal-header>
                       <mdb-modal-body>
                         <form @submit.prevent="salvar">
@@ -85,7 +86,7 @@
                           required
                         />
                         <div class="float-right">
-                          <mdb-btn color="indigo" size="sm">Criar membro da equipe</mdb-btn>
+                          <mdb-btn color="indigo" size="sm">{{btn_salvar}}</mdb-btn>
                         </div>
                         </form>
                       </mdb-modal-body>
@@ -99,33 +100,36 @@
                       <mdb-modal-body  class="text-center">
                         <mdb-icon icon="check" size="4x" class="mb-3 animated rotateIn"/>
                         <p>
-                          Usuário adicionado com sucesso!
+                          {{msg_sucesso}}
+
                         </p>
                       </mdb-modal-body>
 
                     </mdb-modal>
 
                   <mdb-row class="my-4">
-                    <mdb-col sm="3" v-for="usuario of usuarios" :key="usuario.id">
-                      <mdb-card>
-                        <mdb-card-body>
-                          <center>
-                            <img
-                              class="card-img-100 rounded-circle d-flex z-depth-1 mr-3"
-                              src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg"
-                              alt="Generic placeholder image"
-                            >
-                          </center>
-                          <mdb-card-text>
-                            <b>
-                              <center>{{usuario.nome}}</center>
-                            </b>
-                          </mdb-card-text>
-                          <mdb-card-text>
-                            <center>{{usuario.email}}</center>
-                          </mdb-card-text>
-                        </mdb-card-body>
-                      </mdb-card>
+                    <mdb-col sm="3" v-for="usuario of usuarios" :key="usuario._id">
+                      <div @click="editar(usuario)">
+                        <mdb-card>
+                          <mdb-card-body>
+                            <center>
+                              <img
+                                class="card-img-100 rounded-circle d-flex z-depth-1 mr-3"
+                                src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg"
+                                alt="Generic placeholder image"
+                              >
+                            </center>
+                            <mdb-card-text>
+                              <b>
+                                <center>{{usuario.nome}}</center>
+                              </b>
+                            </mdb-card-text>
+                            <mdb-card-text>
+                              <center>{{usuario.email}}</center>
+                            </mdb-card-text>
+                          </mdb-card-body>
+                        </mdb-card>
+                      </div>
                       <br>
                     </mdb-col>
                   </mdb-row>
@@ -183,17 +187,45 @@ export default {
   },
   methods: {
     salvar(){
-      Usuarios.salvar(this.usuario).then(resposta => {
-        this.listar();
-        this.usuario={};
-        this.showModal7 = false;
-        this.show=true;
-      });
+      if(!this.usuario._id){
+        Usuarios.salvar(this.usuario).then(resposta => {
+          this.listar();
+          this.usuario={};
+          this.showModal7 = false;
+          this.show=true;
+        });
+      }
+      else
+      {
+          Usuarios.atualizar(this.usuario).then(resposta => {
+          this.listar();
+          this.usuario={};
+          this.showModal7 = false;
+          this.show=true;
+         });
+      }
     },
     listar (){
       Usuarios.listar().then(resposta => {
       this.usuarios = resposta.data;
     });
+    },
+    editar(usuario)
+    {
+      this.titulo_form = "Editar Membro";
+      this.showModal7 = true;
+      this.usuario = usuario;
+      this.msg_sucesso = " Usuário alterado com sucesso!";
+      this.btn_salvar = "Editar Membro";
+
+    },
+    abrirModal()
+    {
+      this.titulo_form = "Adicionar Membro";
+      this.showModal7 = true;
+      this.msg_sucesso = " Usuário adicionado com sucesso!";
+      this.btn_salvar = "Salvar Membro";
+      this.usuario={};
     }
   },
   name: "App",
@@ -235,7 +267,11 @@ export default {
     return {
       msg: "Setup",
       usuarios: [],
+      titulo_form: "Novo Membro",
+      msg_sucesso : " Usuário adicionado com sucesso!",
+      btn_salvar : "Salvar Membro",
       usuario: {
+        _id: "",
         nome: "",
         email: ""
       },

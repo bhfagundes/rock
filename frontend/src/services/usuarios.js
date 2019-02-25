@@ -6,5 +6,9 @@ export default {
   },
   salvar: usuario => {
     return http.post("usuarios",usuario);
+  },
+  atualizar: usuario => {
+    return http.put("usuarios/"+usuario._id,usuario);
   }
+
 };
