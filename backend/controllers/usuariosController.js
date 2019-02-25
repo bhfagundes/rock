@@ -21,16 +21,16 @@ var usuariosController = function (Usuarios){
         usuario.save(function(err){
             if(err){
                 res.status(500);
-                res.send('Erro : falha ao incluir produto...');
+                res.send('Erro : falha ao incluir usuário...');
             }
             else
             {
                 res.status(201);
                 res.send(usuario);
             }
-        });W
+        });
     };
-    var getById = function(req,res){
+    var getById = function(req,res){    
         res.setHeader("Access-Control-Allow-Origin","*");
         Usuarios.findById(req.params.id, function(err, usuario){
             if(err)

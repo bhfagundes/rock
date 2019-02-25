@@ -4,7 +4,6 @@ var usuariosController = require('../controllers/usuariosController')(Usuarios);
 var usuariosRouter = express.Router();
 var app = express();
 
-
 usuariosRouter.route('')
     .get(usuariosController.get)
     .post(usuariosController.add);
