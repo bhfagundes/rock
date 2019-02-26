@@ -33,8 +33,8 @@ export default {
                 msg: 'Index',
                 menu: [
                     {
-                        header: false,
-                        title: '',
+                        header: true,
+                        title: 'Rock Content',
                         // component: componentName
                         // visibleOnCollapse: true
                     },
