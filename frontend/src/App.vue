@@ -39,7 +39,7 @@ export default {
                         // visibleOnCollapse: true
                     },
                     {
-                        href: '/teste',
+                        href: '/tasks',
                         title: 'Tasks',
                         icon: 'fa fa-tasks',
                         /*
@@ -51,7 +51,7 @@ export default {
                         */
                     },
                     {
-                        href: '/home',
+                        href: '/content',
                         title: 'Content',
                         icon: 'fa fa-file',
 

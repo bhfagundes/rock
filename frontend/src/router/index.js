@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HelloWorld from '@/components/HelloWorld';
-import Home from '@/components/Home';
+import Tasks from '@/components/Tasks';
+import Content from '@/components/Content';
 import Setup from '@/components/Setup';
 
 Vue.use(Router);
@@ -9,19 +9,14 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: '/teste',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '/content',
+      name: 'Content',
+      component: Content
     },
     {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/home',
-      name: 'Index',
-      component: Home
+      path: '/tasks',
+      name: 'Tasks',
+      component: Tasks
     },
     {
       path: '/setup',

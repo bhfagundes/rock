@@ -1,7 +1,6 @@
 //var Usuarios = require('../models/usuariosModel');
 var usuariosController = function (Usuarios){
     var get = function (req, res) {
-        res.setHeader("Access-Control-Allow-Origin","*");
         Usuarios.find(function (err, usuarios) {
 
             if (err) {
@@ -16,7 +15,6 @@ var usuariosController = function (Usuarios){
     };
     var add  = function(req, res)
     {
-        res.setHeader("Access-Control-Allow-Origin","*");
         var usuario = new Usuarios(req.body);
         usuario.save(function(err){
             if(err){
@@ -31,7 +29,6 @@ var usuariosController = function (Usuarios){
         });
     };
     var getById = function(req,res){    
-        res.setHeader("Access-Control-Allow-Origin","*");
         Usuarios.findById(req.params.id, function(err, usuario){
             if(err)
             {
@@ -47,7 +44,6 @@ var usuariosController = function (Usuarios){
     };
     var update = function(req, res)
     {
-        res.setHeader("Access-Control-Allow-Origin","*");
         Usuarios.findById(req.params.id, function (err, usuario){
             if(err)
             {
@@ -74,7 +70,6 @@ var usuariosController = function (Usuarios){
         });
     };
     var remove = function(req, res){
-        res.setHeader("Access-Control-Allow-Origin","*");
         Usuarios.findById(req.params.id, function (err, usuario){
             usuario.remove(function (err){
                 if(!err)
