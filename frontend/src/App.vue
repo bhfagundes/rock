@@ -2,7 +2,7 @@
     <div id="app">
         <mdb-container fluid class="mt-1">
             <mdb-row style="width:100%">
-                <mdb-col sm="2" md="1" > <sidebar-menu :menu="menu" style="width:10%;"/></mdb-col>
+                <mdb-col sm="2" md="1" > <sidebar-menu :menu="menu" width="150px" /></mdb-col>
                 <mdb-col sm="2" md="11"> <router-view style="width:100%"/></mdb-col>
             </mdb-row>
 
@@ -14,6 +14,11 @@
 console.log("teste");
 import {mdbContainer, mdbRow, mdbCol,mdbDropdown, mdbDropdownItem, mdbDropdownMenu, mdbDropdownToggle } from 'mdbvue';
 export default {
+  mounted() {
+   var teste= document.getElementsByClassName('collapse-btn');
+   teste.visibility = 'hidden';
+   teste.hidden = 'true';
+  },
   name: 'App',
   components: {
     mdbContainer,
