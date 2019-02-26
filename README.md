@@ -1,5 +1,5 @@
 # Repositório criado para realização do desafio técnico da Rock Content
-## Front End:vue e para Back End
+## Front End: VueJs 2
 Para desenvolver as telas solicitas, utilizei do vue 2. Busquei utilizar as tecnologias que me sentia mais a vontade dentro daquelas que os Rocker preferem. 
 As bibliotecas usadas, foram bibliotecas que eu já havia trabalhado, então me senti mais confortável para utilizá-las para o desafio.
 Para o template, usei o Bootstrap-material-design para vue. Achei os ícones bem pertinentes.
