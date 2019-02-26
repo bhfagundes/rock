@@ -22,8 +22,13 @@ Após estar com a API finalizada e com o fronted praticamente finalizado, resolv
 Para realização dos desafios, me senti confortável a procurar formas de conhecimento, visando deixar minha aplicação a mais simples e eficiente possível. Busquei obedecer o design Patterns, e utilizar as principais novidades atuais na minha aplicação. Para isso, usei as seguintes referências:
 
 https://github.com/jamesaud/VENoM-Docker
+
 http://www.macoratti.net/17/04/node_restmgdb6.htm
+
 https://www.youtube.com/watch?v=wwq94z8mssY
+
 Aprenda a criar sites e sistemas web utilizando a plataforma NodeJS e o banco de dados MongoDB - Jorge Sant Ana
+
 Curso de VueJS da Udemy
+
 Grupo no telegram de VueJS, NodeJS, Bootstrap
